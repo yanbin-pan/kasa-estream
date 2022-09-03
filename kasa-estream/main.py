@@ -1,6 +1,8 @@
-from kasa import SmartPlug
 import asyncio
 import os
+
+from kasa import SmartPlug
+
 
 async def main():
     plug = SmartPlug(os.environ["KP115_IP"])
@@ -11,5 +13,5 @@ async def main():
         print(plug.emeter_realtime["power"])
         await asyncio.sleep(0.5)  # Sleep some time between updates
 
-if __name__=="__main__":
+if __name__== "__main__":
     asyncio.run(main())
